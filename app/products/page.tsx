@@ -2,6 +2,8 @@ import AddProduct from './addProduct'
 import DeleteProduct from './deleteProduct'
 import UpdateProduct from './updateProduct'
 
+import Container from '../layouts/Container'
+
 type Product = {
     id: number;
     title: string;
@@ -22,35 +24,37 @@ export default async function ProductList() {
     const products: Product[] = await getProducts()
     return (
         <section className="items-center w-full">
-            <div className="py-10 px-10 ">
-                <div className="py-2">
-                    <AddProduct />
-                </div>
+            <Container>
+                <div className="py-10 px-10 ">
+                    <div className="py-2">
+                        <AddProduct />
+                    </div>
 
-                <table className="table w-full">
-                    <thead>
-                        <tr className="uppercase text-center">
-                            <th>#</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.map((item, index) => (
-                            <tr key={index} className='text-center capitalize'>
-                                <td>{item.id+1}</td>
-                                <td>{item.title}</td>
-                                <td>{item.price}</td>
-                                <td className='flex gap-6 justify-center'>
-                                <UpdateProduct {...item} />
-                                <DeleteProduct {...item} />
-                                </td>
+                    <table className="table w-full">
+                        <thead>
+                            <tr className="uppercase text-center">
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Action</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {products.map((item, index) => (
+                                <tr key={index} className='text-center capitalize'>
+                                    <td>{item.id+1}</td>
+                                    <td>{item.title}</td>
+                                    <td>{item.price}</td>
+                                    <td className='flex gap-6 justify-center'>
+                                    <UpdateProduct {...item} />
+                                    <DeleteProduct {...item} />
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </Container>
         </section>
         
     )
