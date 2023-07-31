@@ -9,6 +9,7 @@ type Product = {
     id: number;
     title: string;
     price: number;
+    image: string;
 }
 
 async function getProducts() {
@@ -24,14 +25,14 @@ async function getProducts() {
 export default async function ProductList() {
     const products: Product[] = await getProducts()
     return (
-        <section className="items-center w-full">
+        <section className="items-center">
             <Container>
                 <div className="py-10 px-10 ">
                     <div className="py-2">
                         <AddProduct />
                     </div>
 
-                    <table className="table w-full">
+                    <table className="table">
                         <thead>
                             <tr className="uppercase text-center text-white">
                                 <th>#</th>
@@ -43,7 +44,7 @@ export default async function ProductList() {
                         <tbody>
                             {products.map((item, index) => (
                                 <tr key={index} className='text-center capitalize text-white'>
-                                    <td>{item.id+1}</td>
+                                    <td>{item.id}</td>
                                     <td>{item.title}</td>
                                     <td>{item.price}</td>
                                     <td className='flex gap-6 justify-center'>
