@@ -1,10 +1,10 @@
-import Container from "../layouts/Container"
+import Container from "../../../app/layouts/Container"
 import Link from "next/link"
 import { menu } from '@/data/menu'
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white py-16">
+        <footer className="bg-base-content text-white py-16">
             <Container className="flex justify-evenly">
                 <div>
                     <h1 className="text-4xl text-white font-bold">Footer</h1>

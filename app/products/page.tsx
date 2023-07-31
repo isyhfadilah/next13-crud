@@ -3,6 +3,7 @@ import DeleteProduct from './deleteProduct'
 import UpdateProduct from './updateProduct'
 
 import Container from '../layouts/Container'
+import DetailProduk from './detailProduct'
 
 type Product = {
     id: number;
@@ -32,7 +33,7 @@ export default async function ProductList() {
 
                     <table className="table w-full">
                         <thead>
-                            <tr className="uppercase text-center">
+                            <tr className="uppercase text-center text-white">
                                 <th>#</th>
                                 <th>Product Name</th>
                                 <th>Price</th>
@@ -41,13 +42,14 @@ export default async function ProductList() {
                         </thead>
                         <tbody>
                             {products.map((item, index) => (
-                                <tr key={index} className='text-center capitalize'>
+                                <tr key={index} className='text-center capitalize text-white'>
                                     <td>{item.id+1}</td>
                                     <td>{item.title}</td>
                                     <td>{item.price}</td>
                                     <td className='flex gap-6 justify-center'>
                                     <UpdateProduct {...item} />
                                     <DeleteProduct {...item} />
+                                    <DetailProduk {...item}/>
                                     </td>
                                 </tr>
                             ))}
