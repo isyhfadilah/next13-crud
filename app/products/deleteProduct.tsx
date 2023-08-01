@@ -39,7 +39,7 @@ export default function DeleteProduct(item: Product) {
             <input type="checkbox" className="modal-toggle" checked={modal} onChange={handleChange}/>
 
             <div className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-base-content">
                     <h3 className="font-bold text-lg">Are you sure to delete {item.title}?</h3>
                         <div className="modal-action">
                             <button type="button" className="btn" onClick={handleChange}>close</button>

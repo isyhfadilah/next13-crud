@@ -47,7 +47,7 @@ export default function AddProduct() {
             <input type="checkbox" className="modal-toggle" checked={modal} onChange={handleChange}/>
 
             <div className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-base-content text-white">
                     <h3 className="font-bold text-lg">Add New Product</h3>
                     <form onSubmit={handleSubmit}>
                         <div className="form-control">
@@ -56,7 +56,7 @@ export default function AddProduct() {
                                 type="text" 
                                 value={title} 
                                 onChange={(e) => setTitle(e.target.value)}
-                                className="input w-full input-bordered" 
+                                className="input w-full input-bordered text-neutral" 
                                 placeholder="Product Name" />
                         </div>
                         <div className="form-control">
@@ -65,7 +65,7 @@ export default function AddProduct() {
                                 type="text" 
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
-                                className="input w-full input-bordered" 
+                                className="input w-full input-bordered text-neutral" 
                                 placeholder="Price"/>
                         </div>
 

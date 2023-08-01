@@ -51,7 +51,7 @@ export default function UpdateProduct(item: Product) {
             <input type="checkbox" className="modal-toggle" checked={modal} onChange={handleChange}/>
 
             <div className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-base-content">
                     <h3 className="font-bold text-lg">Update {item.title}</h3>
                     <form onSubmit={handleUpdate}>
                         <div className="form-control">
@@ -60,7 +60,7 @@ export default function UpdateProduct(item: Product) {
                                 type="text" 
                                 value={title} 
                                 onChange={(e) => setTitle(e.target.value)}
-                                className="input w-full input-bordered" 
+                                className="input w-full input-bordered text-neutral" 
                                 placeholder="Product Name" />
                         </div>
                         <div className="form-control">
@@ -69,7 +69,7 @@ export default function UpdateProduct(item: Product) {
                                 type="text" 
                                 value={price}
                                 onChange={(e) => setPrice(Number(e.target.value))}
-                                className="input w-full input-bordered" 
+                                className="input w-full input-bordered text-neutral" 
                                 placeholder="Price"/>
                         </div>
 
