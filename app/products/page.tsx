@@ -25,9 +25,9 @@ async function getProducts() {
 export default async function ProductList() {
     const products: Product[] = await getProducts()
     return (
-        <section className="items-center">
+        <section className="items-center py-36">
             <Container>
-                <div className="py-10 px-10 ">
+                <div className="px-10">
                     <div className="py-2">
                         <AddProduct />
                     </div>

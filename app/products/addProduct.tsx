@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation"
 export default function AddProduct() {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
+    // const [image, setImage] = useState("/static/images/")
+
     const [modal, setModal] = useState(false)
     const [isMutating, setIsMutating] = useState(false)
 
@@ -29,6 +31,7 @@ export default function AddProduct() {
             body: JSON.stringify({
                 title: title,
                 price: price,
+                // image: image
             })
         })
 
@@ -36,6 +39,7 @@ export default function AddProduct() {
 
         setTitle("")
         setPrice("")
+        // setImage("")    
         router.refresh()
         setModal(false)
     }
